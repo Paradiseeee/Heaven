@@ -26,8 +26,7 @@ __copyright__ = "Copyright (c) 2019-2020 Paradise"
 # Use of this source code is governed by the MIT license.
 __license__ = "MIT"
 
-import mysql_helper
-from mysql_helper import MysqlHelper
+from .mysql_helper import MysqlHelper
 
 if __name__ == "__main__":
     print('\nWelcome to Heaven!\n')
