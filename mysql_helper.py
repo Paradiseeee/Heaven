@@ -1,11 +1,8 @@
 ﻿# -*- coding: utf-8 -*-
 """
+MySQL Frequently Used Function Integrated with Python.
 View Example：
 https://paradiseeee.github.io/2019/03/09/Python-爬虫快速入门-下/#62-写入-mysql-数据库
-
-Execute 
-`python -m paradise.mysql_helper` 
-to test connection.
 """
 
 import pymysql
@@ -17,8 +14,8 @@ from warnings import filterwarnings
 
 filterwarnings('ignore')
 
+
 class MysqlHelper:
-    '''MySQL Frequently Used Function Integrated with Python'''
 
     def __init__(self, host='localhost', port=3306, charset='utf8'):
         '''Initializing'''
@@ -39,6 +36,13 @@ class MysqlHelper:
             f'mysql+pymysql://{self.user}:{self.password}' +
             f'@{host}:{port}/{self.database}?charset={charset}'
             )
+        
+    def flush_connection(self):
+        '''建表或更新后需要重建连接才能查询新内容'''
+        self.conn.close()
+        self.conn = pymysql.connect(host=self.host, port=self.port, charset=self.charset, user=self.user, password=self.password, database=self.database)
+        self.cur = self.conn.cursor()
+        self.engine = sqlalchemy.create_engine(f'mysql+pymysql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}?charset={self.charset}')
 
     def execute(self, sql, params=None):
         '''重新定义 pymysql 的 execute 方法，一步到位'''
@@ -48,11 +52,7 @@ class MysqlHelper:
 
     def write_df(self, df, table):
         '''将 DataFrame 写入已经存在的表'''
-        df.to_sql(
-            table, 
-            con=self.engine, 
-            if_exists='append', 
-            index=False)
+        df.to_sql(table, con=self.engine, if_exists='append', index=False)
         print('>>> 成功写入数据库！')
 
     def create_table(self, tbname, sql=None):
@@ -107,17 +107,3 @@ class MysqlHelper:
             print(df.to_markdown())
         else:
             return df
-    
-    def flush_connection(self):
-        '''建表或更新后需要重建连接才能查询新内容'''
-        self.conn.close()
-        self.conn = pymysql.connect(host=self.host, port=self.port, charset=self.charset, user=self.user, password=self.password, database=self.database)
-        self.cur = self.conn.cursor()
-        self.engine = sqlalchemy.create_engine(f'mysql+pymysql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}?charset={self.charset}')
-
-
-if __name__ == "__main__":
-    helper = MysqlHelper()
-    print('\nConnection Established! Successfully Generate:')
-    print(f'\t{helper}\n')
-    input('press any key to quit ...')
