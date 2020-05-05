@@ -1,4 +1,4 @@
 cd D:\ProgramFiles\Python37\Lib\Heaven
 git pull
-git log
+git show -q
 pause
