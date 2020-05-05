@@ -27,7 +27,6 @@ __copyright__ = "Copyright (c) 2019-2020 Paradise"
 __license__ = "MIT"
 
 from .mysql_helper import MysqlHelper
-import chinese_encoding
 
 if __name__ == "__main__":
     print('\nWelcome to Heaven!\n')
