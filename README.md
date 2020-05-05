@@ -4,6 +4,16 @@
 
 本仓库集成了一些常用功能，包括数据科学处理过程、日常工作效率提升，以及一些有趣的功能。目前正在开发中，如果效果良好将在以后继续完善，打造一个数据科学专用工具箱。数据科学包括多个维度，具体针对哪方面的问题...暂时还没想好。
 
+安装方法：
+
+```bash
+cd %PYTHON_HOME%/Lib/
+git clone https://github.com/paradiseeee/heaven
+```
+
+*PS：本人小白，纯属瞎搞，路过的朋友如果感兴趣欢迎交流指教*
+
+
 ## 模块列表
 
 - <strong><i>chinese_encoding.py</i></strong>
