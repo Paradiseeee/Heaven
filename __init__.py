@@ -29,6 +29,7 @@ __copyright__ = "Copyright (c) 2019-2020 Paradise"
 __license__ = "MIT"
 
 from .mysql_helper import MysqlHelper
+from .pdf_processor import PDFProcessor
 
 if __name__ == "__main__":
     print(' Welcome to Heaven! '.center(72, '_'))

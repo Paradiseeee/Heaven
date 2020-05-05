@@ -16,17 +16,22 @@ git clone https://github.com/paradiseeee/heaven
 
 ## 模块列表
 
-- <strong><i>chinese_encoding.py</i></strong>
-    - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
-    - 状态：完成
-    - 使用： `from Heaven.chinese_encoding import *` 
-
 - <strong><i>mysql_helper.py</i></strong>
     - 功能：将 MySQL 终端的常用功能集成到 Python 环境，解决变量交互问题
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `MysqlHelper??`
 
+- <strong><i>chinese_encoding.py</i></strong>
+    - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
+    - 状态：完成
+    - 使用： `from Heaven.chinese_encoding import *` 
+
 - <strong><i>encryption.py</i></strong>
     - 功能：加密与解密文档
-    - 状态：进行中
+    - 状态：进行中……
     - 使用： `python -m Heaven.encryption`
+
+- <strong><i>pdf_processor.py</i></strong>
+    - 功能：预览 PDF 文件信息、拆分 PDF、合并 PDF
+    - 状态：完成
+    - 使用：`python -m Heaven.pdf_processor`
