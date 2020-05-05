@@ -1,4 +1,6 @@
-"""Heaven
+# -*- coding: utf-8 -*-
+
+doc = """
 I am trying to build a module for specific field of data science.
 At the same time learn to manage a public project.
 
@@ -29,4 +31,5 @@ __license__ = "MIT"
 from .mysql_helper import MysqlHelper
 
 if __name__ == "__main__":
-    print('\nWelcome to Heaven!\n')
+    print(' Welcome to Heaven! '.center(72, '_'))
+    print(doc)
