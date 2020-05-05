@@ -2,6 +2,7 @@
 
 """
 每次用 matplotlib 绘图都要解决一下中文乱码问题，这几段代码又难记，打包起来
+绘图前：from Heaven.chinese_encoding import *
 """
 import matplotlib as mpl
 import matplotlib.pyplot as plt
