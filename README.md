@@ -34,4 +34,9 @@ git clone https://github.com/paradiseeee/heaven
 - <strong><i>pdf_processor.py</i></strong>
     - 功能：预览 PDF 文件信息、拆分 PDF、合并 PDF
     - 状态：完成
-    - 使用：`python -m Heaven.pdf_processor`
+    - 使用： `python -m Heaven.pdf_processor` ； `from Heaven import PDFProcessor`
+
+- <string><i>log_reader.py</i></strong>
+    - 功能：读取大型文本文件，可以写出文件或打印到终端
+    - 状态：完成
+    - 使用： `python -m Heaven.log_reader` ； `from Heaven import LogReader`
