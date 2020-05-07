@@ -16,6 +16,9 @@ git clone https://github.com/paradiseeee/heaven
 
 ## 模块列表
 
+<!-- <details>
+    <summary>展开<strong><em>模块列表</em></strong></summary> -->
+
 - <strong><i>mysql_helper.py</i></strong>
     - 功能：将 MySQL 终端的常用功能集成到 Python 环境，解决变量交互问题
     - 状态：完成
@@ -36,7 +39,9 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.pdf_processor` ； `from Heaven import PDFProcessor`
 
-- <string><i>log_reader.py</i></strong>
+- <strong><i>log_reader.py</i></strong>
     - 功能：读取大型文本文件，可以写出文件或打印到终端
     - 状态：完成
     - 使用： `python -m Heaven.log_reader` ； `from Heaven import LogReader`
+
+<!-- </details> -->
