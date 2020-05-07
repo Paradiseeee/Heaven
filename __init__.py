@@ -12,7 +12,7 @@ the next version.I am new to this whole thing and I look forward some
 usefull advices.
 
 If anyone is interested to this, please let me know:
-paradise@outlook.com; paradise26472@qq.com;
+paradise-yang@outlook.com; paradise26472@qq.com;
 
 More Information About This Module:
 https://github.com/paradiseeee/Heaven
