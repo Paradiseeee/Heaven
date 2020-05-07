@@ -26,9 +26,9 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven.chinese_encoding import *` 
 
-- <strong><i>[encryption.py]()</i></strong>
+- <strong><i>[encryption.py](./encryption.py)</i></strong>
     - 功能：加密与解密文档
-    - 状态：进行中……
+    - 状态：[进行中……](./encryption.py)
     - 使用： `python -m Heaven.encryption`
 
 - <strong><i>pdf_processor.py</i></strong>
