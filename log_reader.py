@@ -1,9 +1,9 @@
 ﻿# -*- coding: utf-8 -*-
-"""
-读取大型文本文件（1G以上）
-"""
 
 class LogReader():
+    """
+    读取大型文本文件（GB级别）
+    """
 
     def __init__(self):
         '''初始化文件编码与文件路径'''
@@ -49,10 +49,14 @@ if __name__ == "__main__":
     except:
         lr.encode = 'gbk'
         lr.get_lines()
+    
+    write = input('>>>选择操作：_输出副本（1）_|_打印结果（2）_ \n')
+    write = True if write == '1' else False
+
     # 循环写出内容
     while True:
         try:
-            lr.get_slice(write=False)
+            lr.get_slice(write=write)
         except:
             print('\t 行号错误！')
         more = input('>>>是否继续读取？(y/n)\n')
