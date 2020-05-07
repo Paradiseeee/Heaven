@@ -26,7 +26,7 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven.chinese_encoding import *` 
 
-- <strong><i><font color='lightblue'>encryption.py</font></i></strong>
+- <strong><i><font color=#0099ff>encryption.py</font></i></strong>
     - 功能：加密与解密文档
     - 状态：进行中……
     - 使用： `python -m Heaven.encryption`
