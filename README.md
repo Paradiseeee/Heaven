@@ -44,4 +44,9 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.log_reader` ； `from Heaven import LogReader`
 
+- - <strong><i>get_dns.py</i></strong>
+    - 功能：获取域名的DNS
+    - 状态：完成
+    - 使用： `python -m Heaven.get_dns` ； `from Heaven import DNSParser`
+
 <!-- </details> -->
