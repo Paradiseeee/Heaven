@@ -31,6 +31,7 @@ __license__ = "MIT"
 from .mysql_helper import MysqlHelper
 from .pdf_processor import PDFProcessor
 from .log_reader import LogReader
+from .get_dns import DNSParser
 
 if __name__ == "__main__":
     print(' Welcome to Heaven! '.center(72, '_'))
