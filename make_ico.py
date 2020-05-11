@@ -17,7 +17,7 @@ class ICOGenerator():
         img.sample("128x128")
         name = self.filename.split('.')[0]
         img.write(name + '.ico')
-        print(f'>>> 成功写出文件：{self.path + self.filename}')
+        print(f'>>> 成功写出文件：{self.path + name}.ico')
 
 
 if __name__ == "__main__":
