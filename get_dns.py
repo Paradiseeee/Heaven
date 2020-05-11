@@ -14,6 +14,15 @@ class DNSParser():
         dfs = read_html(self.url)
         return dfs[0]
 
+    def print_result(self, url=None):
+        '''打印结果，同时允许通过URL参数更改对象的url和domain属性'''
+        if url:
+            self.url = url
+            self.domain = url.split('/')[-1]
+        print(f'\n>>> {self.domain}\n' + '-'*80)
+        df = self.parse_result()
+        print(df.to_markdown())
+
     def write_host(self, filepath=''):
         pass
 
@@ -21,9 +30,7 @@ class DNSParser():
 if __name__ == '__main__':
 
     parser = DNSParser('github.com')
-    print('\n>>> github.com\n' + '-'*80)
-    print(parser.parse_result().to_markdown())
+    parser.print_result()    
 
-    print('\n>>> github.global.ssl.fastly.net\n' + '-'*80)
-    parser.url = 'https://fastly.net.ipaddress.com/github.global.ssl.fastly.net'
-    print(parser.parse_result().to_markdown())
+    url = 'https://fastly.net.ipaddress.com/github.global.ssl.fastly.net'
+    parser.print_result(url)
