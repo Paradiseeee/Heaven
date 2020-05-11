@@ -44,9 +44,14 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.log_reader` ； `from Heaven import LogReader`
 
-- - <strong><i>get_dns.py</i></strong>
-    - 功能：获取域名的DNS
+- <strong><i>get_dns.py</i></strong>
+    - 功能：自动获取域名的 DNS
     - 状态：完成
     - 使用： `python -m Heaven.get_dns` ； `from Heaven import DNSParser`
+
+- <strong><i>make_ico.py</i></strong>
+    - 功能：输入图片生成 ICO 图标文件
+    - 状态：完成
+    - 使用： `python -m Heaven.make_ico`； `from Heaven import ICOGenerator`
 
 <!-- </details> -->
