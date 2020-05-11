@@ -4,6 +4,7 @@ DataScience Toolkits
 """
 
 import os
+import sys
 
 from .mysql_helper import MysqlHelper
 from .pdf_processor import PDFProcessor
@@ -11,7 +12,7 @@ from .log_reader import LogReader
 from .get_dns import DNSParser
 from .make_ico import ICOGenerator
 
-
+# Module Attributes
 __doc__ = '''
 I am trying to build a module for specific field of data science, and
 at the same time learn to manage a public project.
@@ -37,6 +38,9 @@ __version__ = "1.0"
 __copyright__ = "Copyright (c) 2019-2020 Paradise"
 __license__ = "MIT"
 
+# User Attributes
+__ROOT__ = sys.executable.replace('python.exe', 'lib\\Heaven')
+
 
 def get_license():
     with open('LICENSE', 'r') as f:
@@ -44,7 +48,8 @@ def get_license():
     print(text)
 
 
-def get_modules():
+def get_modules(path):
+    os.chdir(path)
     files = [i.split('.') for i in sorted(os.listdir())]
     max_length = max([len(f) for f in os.listdir()])
     for f in files:
@@ -58,9 +63,9 @@ def get_modules():
 
 
 if __name__ == "__main__":
-    
+
     print('\n' + ' Welcome to Heaven! '.center(72, '_'))
     print(__doc__)
 
     print('\n' + ' Module List '.center(72, '_') + '\n')
-    get_modules()
+    get_modules(__ROOT__)
