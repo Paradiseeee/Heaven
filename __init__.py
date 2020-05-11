@@ -48,7 +48,7 @@ def get_license():
     print(text)
 
 
-def get_modules(path):
+def get_modules(path=__ROOT__):
     os.chdir(path)
     files = [i.split('.') for i in sorted(os.listdir())]
     max_length = max([len(f) for f in os.listdir()])
@@ -68,4 +68,4 @@ if __name__ == "__main__":
     print(__doc__)
 
     print('\n' + ' Module List '.center(72, '_') + '\n')
-    get_modules(__ROOT__)
+    get_modules()
