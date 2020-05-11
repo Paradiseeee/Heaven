@@ -52,6 +52,6 @@ git clone https://github.com/paradiseeee/heaven
 - <strong><i>make_ico.py</i></strong>
     - 功能：输入图片生成 ICO 图标文件
     - 状态：完成
-    - 使用： `python -m Heaven.make_ico`； `from Heaven import ICOGenerator`
+    - 使用： `python -m Heaven.make_ico` ； `from Heaven import ICOGenerator`
 
 <!-- </details> -->
