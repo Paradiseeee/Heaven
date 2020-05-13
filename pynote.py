@@ -4,7 +4,8 @@
 用命令行香。
 """
 import os
-from Heaven import __ROOT__
+import shutil
+from Heaven import __ROOT__, get_modules
 
 class PyNote():
 
@@ -14,15 +15,13 @@ class PyNote():
             os.mkdir(__ROOT__ + '\\DOCUMENTS')
         except:
             os.chdir(__ROOT__ + '\\DOCUMENTS')
-        self.mode = input('\n>>> 选择任务：读取（1）| 写入（2）\n')
+        self.mode = input('\n>>> 选择任务：读取（1）| 写入（2）| 清空（3）\n')
         self.new = None
 
-    def update_pointer(self):
+    def writenote(self):
         self.new = input('\n>>> 命名新笔记：\n')
         with open('__POINTER__', 'w') as f:
             f.write(self.new + '.pynote')
-    
-    def writenote(self):
         print('\n>>> 输入内容，输入（q）退出\n')
         while True:
             with open(f'{self.new}.pynote', 'a', encoding='utf-8') as f:
@@ -43,11 +42,13 @@ class PyNote():
         except:
             print('暂无笔记，请添加笔记！')
 
-    def get_doc_num():
-        pass
-
-    def clear_all():
-        pass
+    def clear_all(self):
+        print('>>> 删除以下文件：')
+        get_modules('./')
+        try:
+            shutil.rmtree('./')
+        except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":
@@ -56,5 +57,6 @@ if __name__ == "__main__":
     if noter.mode == '1':
         noter.readnote()
     elif noter.mode == '2':
-        noter.update_pointer()
         noter.writenote()
+    elif noter.mode == '3':
+        noter.clear_all()
