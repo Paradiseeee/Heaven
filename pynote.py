@@ -28,7 +28,7 @@ class PyNote():
             with open(f'{self.new}.pynote', 'a') as f:
                 line = input(':')
                 if line == 'q':
-                    print(f'\n>>> 成功写出文件 {new}.pynote\n')
+                    print(f'\n>>> 成功写出文件 {self.new}.pynote\n')
                     break
                 else:
                     f.write(line + '\n')
@@ -37,7 +37,7 @@ class PyNote():
         try:
             with open('__POINTER__', 'r', encoding='utf-8') as f:
                 pointer = f.read()
-            print(f'{pointer}.pynote'.center(72, '_'))
+            print(pointer.center(72, '_'))
             with open(f'{pointer}.pynote', 'r') as f:
                 print(f.read())
         except:
