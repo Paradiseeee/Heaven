@@ -48,12 +48,12 @@ def get_license():
     print(text)
 
 
-def get_modules(path=__ROOT__, suffix='py'):
+def get_modules(path=__ROOT__, suffix='py', *exclude):
     os.chdir(path)
     files = [i.split('.') for i in sorted(os.listdir())]
     max_length = max([len(f) for f in os.listdir()])
     for f in files:
-        if len(f) == 1 and f[0] not in ['__pycache__', 'LICENSE']:
+        if len(f) == 1 and f[0] not in exclude:
             text = f[0].rjust(max_length-1) + '/' + ' | [P]Path'
             print(text.center(80-max_length, ' '))
     for f in files:
@@ -68,4 +68,4 @@ if __name__ == "__main__":
     print(__doc__)
 
     print('\n' + ' Module List '.center(72, '_') + '\n')
-    get_modules()
+    get_modules(__ROOT__, 'py', '__pycache__', 'LICENSE', 'DOCUMENTS')
