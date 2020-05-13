@@ -5,6 +5,7 @@
 """
 import os
 import shutil
+from datetime import datetime
 from Heaven import __ROOT__
 
 class PyNote():
@@ -16,8 +17,8 @@ class PyNote():
         self.new = None
 
     def writenote(self):
-        self.new = input('\n>>> 命名新笔记：\n')
-        with open('__POINTER__', 'a') as f:
+        self.new = str(datetime.now())[:16].replace(' ', '_')
+        with open('__POINTER__', 'a', encoding='utf-8') as f:
             f.write(self.new + '.pynote\n')
         print('\n>>> 输入内容，输入（q）退出\n')
         while True:
