@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 用于记一些隐私的文本笔记，windows 自带的 sticker 和 Office 不好用，还是
-用命令行香。
+用命令行香。类似 windows 便笺的功能，但是命令行操作，支持缓存历史记录。
 """
 import os
 import shutil
@@ -17,8 +17,8 @@ class PyNote():
 
     def writenote(self):
         self.new = input('\n>>> 命名新笔记：\n')
-        with open('__POINTER__', 'w') as f:
-            f.write(self.new + '.pynote')
+        with open('__POINTER__', 'a') as f:
+            f.write(self.new + '.pynote\n')
         print('\n>>> 输入内容，输入（q）退出\n')
         while True:
             with open(f'{self.new}.pynote', 'a', encoding='utf-8') as f:
@@ -33,6 +33,7 @@ class PyNote():
         try:
             with open('__POINTER__', 'r', encoding='utf-8') as f:
                 pointer = f.read()
+            pointer = pointer.split('\n')[-1]
             print(pointer.center(72, '_'))
             with open(pointer, 'r', encoding='utf-8') as f:
                 print(f.read())
