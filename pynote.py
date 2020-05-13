@@ -33,7 +33,7 @@ class PyNote():
         try:
             with open('__POINTER__', 'r', encoding='utf-8') as f:
                 pointer = f.read()
-            pointer = pointer.split('\n')[-1]
+            pointer = pointer.split('\n')[-2]
             print(pointer.center(72, '_'))
             with open(pointer, 'r', encoding='utf-8') as f:
                 print(f.read())
