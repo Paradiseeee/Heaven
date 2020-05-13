@@ -16,6 +16,7 @@ class PyNote():
         except:
             os.chdir(__ROOT__ + '\\DOCUMENTS')
         self.mode = input('\n>>> 选择任务：读取（1）| 写入（2）| 清空（3）\n')
+        self.docpath = __ROOT__ + '\\DOCUMENTS'
         self.new = None
 
     def writenote(self):
@@ -43,12 +44,17 @@ class PyNote():
             print('暂无笔记，请添加笔记！')
 
     def clear_all(self):
-        print('>>> 删除以下文件：')
-        get_modules('./')
+        confirm = input('>>> 删除以下文件，是否继续？（y/n）')
         try:
-            shutil.rmtree('./')
-        except Exception as e:
-            print(e)
+            get_modules(self.docpath)
+        except:
+            print('暂无笔记，请添加笔记！')
+            return 0
+        if confirm == 'y':
+            try:
+                shutil.rmtree(self.docpath)
+            except Exception as e:
+                print(e)
 
 
 if __name__ == "__main__":
