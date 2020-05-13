@@ -5,7 +5,7 @@
 """
 import os
 import shutil
-from Heaven import __ROOT__, get_modules
+from Heaven import __ROOT__
 
 class PyNote():
 
@@ -43,7 +43,8 @@ class PyNote():
     def clear_all(self):
         print('>>> 删除以下文件：')
         try:
-            get_modules(self.docpath, 'pynote', '__POINTER__')
+            with open('__POINTER__', 'r', encoding='utf-8') as f:
+                print(f.read())
         except:
             print('暂无笔记，请添加笔记！')
             return 0
