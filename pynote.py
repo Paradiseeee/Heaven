@@ -48,6 +48,7 @@ class PyNote():
             return 0
         confirm = input('>>> 是否继续？（y/n）')
         if confirm == 'y':
+            os.chdir('../')
             try:
                 shutil.rmtree(self.docpath)
             except Exception as e:
