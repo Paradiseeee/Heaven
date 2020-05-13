@@ -25,7 +25,7 @@ class PyNote():
     def writenote(self):
         print('\n>>> 输入内容，输入（q）退出\n')
         while True:
-            with open(f'{self.new}.pynote', 'a') as f:
+            with open(f'{self.new}.pynote', 'a', encoding='utf-8') as f:
                 line = input(':')
                 if line == 'q':
                     print(f'\n>>> 成功写出文件 {self.new}.pynote\n')
