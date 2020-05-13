@@ -38,7 +38,7 @@ class PyNote():
             with open('__POINTER__', 'r', encoding='utf-8') as f:
                 pointer = f.read()
             print(pointer.center(72, '_'))
-            with open(f'{pointer}.pynote', 'r') as f:
+            with open(pointer, 'r', encoding='utf-8') as f:
                 print(f.read())
         except:
             print('暂无笔记，请添加笔记！')
