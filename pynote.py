@@ -6,48 +6,55 @@
 import os
 from Heaven import __ROOT__
 
-try:
-    os.mkdir(__ROOT__ + '\\DOCUMENTS')
-except:
-    os.chdir(__ROOT__ + '\\DOCUMNETS')
+class PyNote():
 
-def update_pointer():
-    pass
+    def __init__(self):
+        '''Initializing'''
+        try:
+            os.mkdir(__ROOT__ + '\\DOCUMENTS')
+        except:
+            os.chdir(__ROOT__ + '\\DOCUMENTS')
+        self.mode = input('\n>>> 选择任务：读取（1）| 写入（2）\n')
+        self.new = None
 
-def readnote():
-    pass
-
-def writenote():
-    pass
-
-def get_doc_num():
-    pass
-
-def clear_all():
-    pass
-
-if __name__ == "__main__":
-
-    rw = input('\n>>> 选择任务：读取（1）| 写入（2）\n')
-
-    if rw == '1':
-        with open('__POINTER__', 'r', encoding='utf-8') as f:
-            pointer = f.read()
-            print(f'{pointer}.pynote'.center(72, '_'))
-        
-        
-    
-    elif rw == '2':
-        new = input('\n>>> 命名新笔记：\n')
+    def update_pointer(self):
+        self.new = input('\n>>> 命名新笔记：\n')
         with open('__POINTER__', 'w') as f:
-            f.write(new + '.pynote')
-
+            f.write(self.new + '.pynote')
+    
+    def writenote(self):
         print('\n>>> 输入内容，输入（q）退出\n')
         while True:
-            with open(f'{new}.pynote', 'a') as f:
+            with open(f'{self.new}.pynote', 'a') as f:
                 line = input(':')
                 if line == 'q':
                     print(f'\n>>> 成功写出文件 {new}.pynote\n')
                     break
                 else:
-                    f.write(line)
+                    f.write(line + '\n')
+
+    def readnote(self):
+        try:
+            with open('__POINTER__', 'r', encoding='utf-8') as f:
+                pointer = f.read()
+            print(f'{pointer}.pynote'.center(72, '_'))
+            with open(f'{pointer}.pynote', 'r') as f:
+                print(f.read())
+        except:
+            print('暂无笔记，请添加笔记！')
+
+    def get_doc_num():
+        pass
+
+    def clear_all():
+        pass
+
+
+if __name__ == "__main__":
+
+    noter = PyNote()
+    if noter.mode == '1':
+        noter.readnote()
+    elif noter.mode == '2':
+        noter.update_pointer()
+        noter.writenote()
