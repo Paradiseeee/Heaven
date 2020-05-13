@@ -6,7 +6,10 @@
 import os
 from Heaven import __ROOT__
 
-os.chdir(__ROOT__ + '\\DOCUMNETS')
+try:
+    os.mkdir(__ROOT__ + '\\DOCUMENTS')
+except:
+    os.chdir(__ROOT__ + '\\DOCUMNETS')
 
 def update_pointer():
     pass
