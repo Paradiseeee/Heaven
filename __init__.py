@@ -48,7 +48,7 @@ def get_license():
     print(text)
 
 
-def get_modules(path=__ROOT__):
+def get_modules(path=__ROOT__, suffix='py'):
     os.chdir(path)
     files = [i.split('.') for i in sorted(os.listdir())]
     max_length = max([len(f) for f in os.listdir()])
@@ -57,7 +57,7 @@ def get_modules(path=__ROOT__):
             text = f[0].rjust(max_length-1) + '/' + ' | [P]Path'
             print(text.center(80-max_length, ' '))
     for f in files:
-        if 'py' in f:
+        if suffix in f:
             text = '.'.join(f).rjust(max_length) + ' | [F]File'
             print(text.center(80-max_length, ' '))
 
