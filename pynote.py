@@ -11,10 +11,6 @@ class PyNote():
 
     def __init__(self):
         '''Initializing'''
-        try:
-            os.mkdir(__ROOT__ + '\\DOCUMENTS')
-        except:
-            os.chdir(__ROOT__ + '\\DOCUMENTS')
         self.mode = input('\n>>> 选择任务：读取（1）| 写入（2）| 清空（3）\n')
         self.docpath = __ROOT__ + '\\DOCUMENTS'
         self.new = None
@@ -57,13 +53,19 @@ class PyNote():
             except Exception as e:
                 print(e)
 
+    def main(self):
+        try:
+            os.mkdir(self.docpath)
+            os.chdir(self.docpath)
+        except:
+            os.chdir(self.docpath)
+        if self.mode == '1':
+            self.readnote()
+        elif self.mode == '2':
+            self.writenote()
+        elif noter.mode == '3':
+            self.clear_all()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
-    noter = PyNote()
-    if noter.mode == '1':
-        noter.readnote()
-    elif noter.mode == '2':
-        noter.writenote()
-    elif noter.mode == '3':
-        noter.clear_all()
+    PyNote().main()
