@@ -63,7 +63,7 @@ class PyNote():
             self.readnote()
         elif self.mode == '2':
             self.writenote()
-        elif noter.mode == '3':
+        elif self.mode == '3':
             self.clear_all()
 
 if __name__ == '__main__':
