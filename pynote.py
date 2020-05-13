@@ -44,12 +44,13 @@ class PyNote():
             print('暂无笔记，请添加笔记！')
 
     def clear_all(self):
-        confirm = input('>>> 删除以下文件，是否继续？（y/n）')
+        print('>>> 删除以下文件：')
         try:
             get_modules(self.docpath)
         except:
             print('暂无笔记，请添加笔记！')
             return 0
+        confirm = input('>>> 是否继续？（y/n）')
         if confirm == 'y':
             try:
                 shutil.rmtree(self.docpath)
