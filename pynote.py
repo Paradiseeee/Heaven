@@ -42,7 +42,7 @@ class PyNote():
     def clear_all(self):
         print('>>> 删除以下文件：')
         try:
-            get_modules(self.docpath, suffix='pynote', '__POINTER__')
+            get_modules(self.docpath, 'pynote', '__POINTER__')
         except:
             print('暂无笔记，请添加笔记！')
             return 0
