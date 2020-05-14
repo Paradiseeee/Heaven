@@ -17,7 +17,7 @@ class PyNote():
         self.new = None
 
     def writenote(self):
-        self.new = str(datetime.now())[:16].replace(' ', '_')
+        self.new = str(datetime.now())[:19].replace(' ', '_').replace(':', '')
         with open('__POINTER__', 'a', encoding='utf-8') as f:
             f.write(self.new + '.pynote\n')
         print('\n>>> 输入内容，输入（q）退出\n')
