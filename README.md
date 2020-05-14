@@ -54,4 +54,9 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.make_ico` ； `from Heaven import ICOGenerator`
 
+- <strong><i>pynote.py</i></strong>
+    - 功能：日志记录程序，替代类似便笺程序，可以自动存档
+    - 状态：完成
+    - 使用： `python -m Heaven.pynote`
+
 <!-- </details> -->
