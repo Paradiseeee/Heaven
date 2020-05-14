@@ -42,14 +42,14 @@ class PyNote():
             print('暂无笔记，请添加笔记！')
 
     def clear_all(self):
-        print('>>> 删除以下文件：')
+        print('\n读取笔记 ...\n')
         try:
             with open('__POINTER__', 'r', encoding='utf-8') as f:
                 print(f.read())
         except:
             print('暂无笔记，请添加笔记！')
             return 0
-        confirm = input('>>> 是否继续？（y/n）')
+        confirm = input('>>> 是否删除以上文件？（y/n）')
         if confirm == 'y':
             os.chdir('../')
             try:
