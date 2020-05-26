@@ -4,3 +4,4 @@ desktop.ini
 /__pycache__
 /DOCUMENTS
 output.*
+/_UserKeys/*.json
