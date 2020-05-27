@@ -1,6 +1,12 @@
 ﻿# coding=utf-8
 from aip import AipOcr
 
+class TextIdentify():
+
+    def __init__(self):
+        
+
+
 #输入百度云应用的APP_ID、API_KEY、SERET_KEY
 AI='15164766'
 AK='op8G4tpcaqL0mV0F7xcMvWFv'
