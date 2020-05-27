@@ -53,7 +53,7 @@ def get_modules(path=__ROOT__, suffix='py', *exclude):
     files = [i.split('.') for i in sorted(os.listdir())]
     max_length = max([len(f) for f in os.listdir()])
     for f in files:
-        if len(f) == 1 and f[0] not in exclude:
+        if len(f) == 1 and f[0] not in exclude and f[0][0] != '_':
             text = f[0].rjust(max_length-1) + '/' + ' | [P]Path'
             print(text.center(80-max_length, ' '))
     for f in files:
