@@ -1,13 +1,14 @@
 ﻿# -*- coding: utf-8 -*-
 import json
 from aip import AipOcr
+from Heaven import __ROOT__
 
 
 class TextIdentify():
 
     def __init__(self, pic_name='捕获.JPG', lang='CHN_ENG'):
 
-        with open('../_UserKeys/baidu-ocr-key.json', 'r') as f:
+        with open(__ROOT__+'/_UserKeys/baidu-ocr-key.json', 'r') as f:
             self.keys = json.loads(f.read())
         with open('捕获.JPG', 'rb') as f:
             self.img = f.read()
