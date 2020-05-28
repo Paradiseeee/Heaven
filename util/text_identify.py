@@ -38,5 +38,5 @@ if __name__ == '__main__':
         content = TextIdentify().identify_image()
         with open('output.txt', 'w') as f:
             f.write(content)
-        print('已输出文本。。。')
-    
+        print('\n' + ' 已写出内容到 output.txt '.center(65, '-') + '\n')
+        print(content)
