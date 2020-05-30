@@ -33,10 +33,10 @@ git clone https://github.com/paradiseeee/heaven
 <!-- usage update below undone -->
 
 - <string><i>其他文件</i></strong>
-    - _DOCS: 除了 User Keys 以及脚本文件的其他文本文件；
-    - _UserKeys: 用户的密钥配置，例如 API 密钥、数据库密钥等；
-    - _UserKeys_PublicFormat: 脱敏后的 _UserKeys，用来参考密钥配置；
-    - update_python_lib.bat: 更新 %PYTHON_HOME%\LIB 的批处理；
+    - _DOCS： 除了 User Keys 以及脚本文件的其他文本文件；
+    - _UserKeys： 用户的密钥配置，例如 API 密钥、数据库密钥等；
+    - _UserKeys_PublicFormat： 脱敏后的 _UserKeys，用来参考密钥配置；
+    - update_python_lib.bat： 更新 %PYTHON_HOME%\LIB 的批处理；
     - LISENCE
     - .gitignore
     - .gitattributes
