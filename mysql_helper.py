@@ -16,6 +16,14 @@ filterwarnings('ignore')
 
 
 class MysqlHelper:
+    '''
+    Functions：
+    helper.flush_connection(self) -- flush connection after update tables.
+    helper.execute(self, sql, params=None) -- execute and fetch all result and returns.
+    helper.write_df(self, df, table) -- write df to table (whice has the same fileds).
+    helper.create_table(self, tbname, sql=None) -- a general guide to create table (can also use sql instead of guide).
+    helper.return_to_df(self, sql, cols=[], show=True) -- a pretty version of self.execute, needed accurate cols, can return or show.
+    '''
 
     def __init__(self, host='localhost', port=3306, charset='utf8'):
         '''Initializing'''
@@ -82,7 +90,7 @@ class MysqlHelper:
             sql = f"CREATE TABLE IF NOT EXISTS {tbname}("
             sql += f"{', '.join(fields)}, PRIMARY KEY ({pk}));"
             self.execute(sql)
-            print(f'\n>>> 成功创建表 {tbname} ！')
+        print(f'\n>>> 成功创建表 {tbname} ！')
 
     def returns_to_df(self, sql, cols=[], show=True):
         '''将查询结果输出为 DataFrame，cols 需要与查询的字段一一对应'''
