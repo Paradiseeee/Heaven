@@ -14,7 +14,9 @@ git clone https://github.com/paradiseeee/heaven
 *PS：本人小白，纯属瞎搞，路过的朋友如果感兴趣欢迎交流指教*
 
 
-## 模块列表
+## 详情
+
+### [***Heaven.util***](./util)
 
 <!-- <details>
     <summary>展开<strong><em>模块列表</em></strong></summary> -->
@@ -29,9 +31,9 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven.chinese_encoding import *` 
 
-- <strong><i>[encryption.py](./encryption.py)</i></strong>
+- <strong><i>[encryption.py](./util/encryption.py)</i></strong>
     - 功能：加密与解密文档
-    - 状态：[进行中……](./encryption.py)
+    - 状态：[进行中……](./util/encryption.py)
     - 使用： `python -m Heaven.encryption`
 
 - <strong><i>pdf_processor.py</i></strong>
