@@ -16,15 +16,34 @@ git clone https://github.com/paradiseeee/heaven
 
 ## 详情
 
-### [***Heaven.util***](./util)
+### Heaven -- 根目录，数据分析工具，导入所有类和对象
 
-<!-- <details>
-    <summary>展开<strong><em>模块列表</em></strong></summary> -->
+- <strong><i>__init__.py</i></strong>
+    - 功能：注意到会增加 import 用时
+        - 直接引入所有脚本中可复用的类对象
+        - 显示 module 信息，包括 LISENCE、DOC-STRING、具体内容
+    - 状态：同步更新
+    - 使用： `python -m Heaven.__init__.py`
 
 - <strong><i>mysql_helper.py</i></strong>
     - 功能：将 MySQL 终端的常用功能集成到 Python 环境，解决变量交互问题
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `MysqlHelper??`
+
+- <string><i>其他文件</i></strong>
+    - _DOCS: 除了 User Keys 以及脚本文件的其他文本文件；
+    - _UserKeys: 用户的密钥配置，例如 API 密钥、数据库密钥等；
+    - _UserKeys_PublicFormat: 脱敏后的 _UserKeys，用来参考密钥配置；
+    - update_python_lib.bat: 更新 %PYTHON_HOME%\LIB 的批处理；
+    - LISENCE
+    - .gitignore
+    - .gitattributes
+    - README.md
+
+### [***Heaven.util***](./util) -- 其他乱七八糟的小工具
+
+<!-- <details>
+    <summary>展开<strong><em>模块列表</em></strong></summary> -->
 
 - <strong><i>chinese_encoding.py</i></strong>
     - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
