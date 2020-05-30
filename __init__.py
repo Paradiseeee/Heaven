@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
     print('\n' + ' LISENCE '.center(72, '_') + '\n')
     with open('LICENSE', 'r') as f:
-    print(f.read())
+        print(f.read())
