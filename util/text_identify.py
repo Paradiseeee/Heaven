@@ -35,8 +35,9 @@ class TextIdentify():
 
 if __name__ == '__main__':
 
-        content = TextIdentify().identify_image()
-        with open('output.txt', 'w') as f:
-            f.write(content)
-        print('\n' + ' 已写出内容到 output.txt '.center(65, '-') + '\n')
-        print(content)
+    input('\n请将图片命名为“捕获.JPG”放到当前文件夹...\n')
+    content = TextIdentify().identify_image()
+    with open('output.txt', 'w') as f:
+        f.write(content)
+    print('\n' + ' 已写出内容到 output.txt '.center(65, '-') + '\n')
+    print(content)
