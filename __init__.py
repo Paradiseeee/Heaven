@@ -7,10 +7,10 @@ import os
 import sys
 
 from .mysql_helper import MysqlHelper
-from .pdf_processor import PDFProcessor
-from .log_reader import LogReader
-from .get_dns import DNSParser
-from .make_ico import ICOGenerator
+from .util.pdf_processor import PDFProcessor
+from .util.log_reader import LogReader
+from .util.get_dns import DNSParser
+from .util.make_ico import ICOGenerator
 
 # Module Attributes
 __doc__ = '''
@@ -68,4 +68,9 @@ if __name__ == "__main__":
     print(__doc__)
 
     print('\n' + ' Module List '.center(72, '_') + '\n')
-    get_modules(__ROOT__, 'py', '__pycache__', 'LICENSE', 'DOCUMENTS')
+    get_modules(__ROOT__, 'py', 
+        '__pycache__', 
+        '_DOCS', 
+        '_UserKeys',
+        '_UserKeys_PublicFormat',
+        'LICENSE')
