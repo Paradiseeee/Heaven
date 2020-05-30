@@ -88,5 +88,4 @@ class PDFProcessor():
 
 if __name__ == '__main__':
 
-    processor = PDFProcessor()
-    processor.main()
+    PDFProcessor().main()
