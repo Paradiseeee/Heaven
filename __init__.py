@@ -12,7 +12,7 @@ from .util.log_reader import LogReader
 from .util.get_dns import DNSParser
 from .util.make_ico import ICOGenerator
 
-# Module Attributes
+# Module Attributes --------------------------------------------------
 __doc__ = '''
 I am trying to build a module for specific field of data science, and
 at the same time learn to manage a public project.
@@ -24,7 +24,7 @@ If everything goes well, I will make it more specific and usefull in
 the next version. I am new to this whole thing and I look forward some 
 usefull advices.
 
-If anyone is interested to this, please let me know:
+If anyone is interested in this, please let me know:
  <paradise26472@qq.com;>
  <paradise-yang@outlook.com;>
 
@@ -38,16 +38,11 @@ __version__ = "1.0"
 __copyright__ = "Copyright (c) 2019-2020 Paradise"
 __license__ = "MIT"
 
-# User Attributes
+# User Attributes -----------------------------------------------
 __ROOT__ = sys.executable.replace('python.exe', 'lib\\Heaven')
 
 
-def get_license():
-    with open('LICENSE', 'r') as f:
-        text = f.read()
-    print(text)
-
-
+# Information Functions ------------------------------------------
 def get_modules(path=__ROOT__, suffix='py', *exclude):
     os.chdir(path)
     files = [i.split('.') for i in sorted(os.listdir())]
@@ -74,3 +69,7 @@ if __name__ == "__main__":
         '_UserKeys',
         '_UserKeys_PublicFormat',
         'LICENSE')
+
+    print('\n' + ' LISENCE '.center(72, '_') + '\n')
+    with open('LICENSE', 'r') as f:
+    print(f.read())
