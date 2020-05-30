@@ -23,12 +23,14 @@ git clone https://github.com/paradiseeee/heaven
         - 直接引入所有脚本中可复用的类对象
         - 显示 module 信息，包括 LISENCE、DOC-STRING、具体内容
     - 状态：同步更新
-    - 使用： `python -m Heaven.__init__.py`
+    - 使用： `python -m Heaven.__init__`
 
 - <strong><i>mysql_helper.py</i></strong>
     - 功能：将 MySQL 终端的常用功能集成到 Python 环境，解决变量交互问题
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `MysqlHelper??`
+
+<!-- usage update below undone -->
 
 - <string><i>其他文件</i></strong>
     - _DOCS: 除了 User Keys 以及脚本文件的其他文本文件；
