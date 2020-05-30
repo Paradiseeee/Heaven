@@ -22,6 +22,6 @@ class ICOGenerator():
 
 if __name__ == "__main__":
 
-    path = input("请输入图片路径及文件名：\n")
-    generator = ICOGenerator(path)
+    name = input("请输入图片文件名（当前路径下）：\n")
+    generator = ICOGenerator(name)
     generator.generate()
