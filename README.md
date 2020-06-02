@@ -31,7 +31,10 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `help(MysqlHelper)`
 
-<!-- usage update below undone -->
+- <strong><i>chinese_encoding.py</i></strong>
+    - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
+    - 状态：完成
+    - 使用： `from Heaven.chinese_encoding import *` 
 
 - <strong><i>其他文件</i></strong>
     - `.gitignore`
@@ -47,11 +50,6 @@ git clone https://github.com/paradiseeee/heaven
 
 <!-- <details>
     <summary>展开<strong><em>模块列表</em></strong></summary> -->
-
-- <strong><i>chinese_encoding.py</i></strong>
-    - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
-    - 状态：完成
-    - 使用： `from Heaven.util.chinese_encoding import *` 
 
 - <strong><i>[encryption.py](./util/encryption.py)</i></strong>
     - 功能：加密与解密文档
