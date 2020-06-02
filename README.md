@@ -51,20 +51,20 @@ git clone https://github.com/paradiseeee/heaven
 <!-- <details>
     <summary>展开<strong><em>模块列表</em></strong></summary> -->
 
-- <strong><i>[encryption.py](./util/encryption.py)</i></strong>
-    - 功能：加密与解密文档
-    - 状态：[进行中……](./util/encryption.py)
-    - 使用： `python -m Heaven.util.encryption`
+- <strong><i>text_identify.py</i></strong>
+    - 功能：文本识别，并输出文件，支持中文/英文
+    - 状态：完成
+    - 使用： `python -m Heaven.util.text_identify`
+
+- <strong><i>text_reader.py</i></strong>
+    - 功能：输入文本转换为语音，支持中文/英文、文本文件/命令行输入
+    - 状态：完成
+    - 使用： `python -m Heaven.util.text_reader`
 
 - <strong><i>pdf_processor.py</i></strong>
     - 功能：预览 PDF 文件信息、拆分 PDF、合并 PDF
     - 状态：完成
     - 使用： `python -m Heaven.util.pdf_processor`
-
-- <strong><i>log_reader.py</i></strong>
-    - 功能：读取大型文本文件，可以写出文件或打印到终端
-    - 状态：完成
-    - 使用： `python -m Heaven.util.log_reader`
 
 - <strong><i>get_dns.py</i></strong>
     - 功能：自动获取域名的 DNS
@@ -76,14 +76,14 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.util.make_ico`
 
-- <strong><i>text_identify.py</i></strong>
-    - 功能：文本识别，并输出文件，支持中文/英文
-    - 状态：完成
-    - 使用： `python -m Heaven.util.text_identify`
+- <strong><i>[encryption.py](./util/encryption.py)</i></strong>
+    - 功能：加密与解密文档
+    - 状态：[进行中……](./util/encryption.py)
+    - 使用： `python -m Heaven.util.encryption`
 
-- <strong><i>text_reader.py</i></strong>
-    - 功能：输入文本转换为语音，支持中文/英文、文本文件/命令行输入
+- <strong><i>log_reader.py</i></strong>
+    - 功能：读取大型文本文件，可以写出文件或打印到终端
     - 状态：完成
-    - 使用： `python -m Heaven.util.text_reader`
+    - 使用： `python -m Heaven.util.log_reader`
 
 <!-- </details> -->
