@@ -7,10 +7,6 @@ import os
 import sys
 
 from .mysql_helper import MysqlHelper
-from .util.pdf_processor import PDFProcessor
-from .util.log_reader import LogReader
-from .util.get_dns import DNSParser
-from .util.make_ico import ICOGenerator
 
 # Module Attributes --------------------------------------------------
 __doc__ = '''
