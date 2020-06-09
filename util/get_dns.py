@@ -32,10 +32,11 @@ class DNSParser():
         '''不可移植使用'''
         # 打开 geany
         pag.press('win'); pag.write('geany'); time.sleep(1); pag.press('enter')
+        pag.hotkey('ctrl', 'shift'); pag.hotkey('ctrl', 'shift')
         # 定位、修改、保存
         pag.moveTo(968,90); pag.moveTo(1300, 900); pag.click(); 
-        pag.hotkey('shift', 'up'); pag.press('backspace'); pag.hotkey('ctrl', 'shift'); 
-        pag.hotkey('ctrl', 'shift'); pag.write(domain+' '); pag.write('github.com\n'); 
+        pag.hotkey('shift', 'up'); pag.press('backspace'); 
+        pag.write(domain+' '); pag.write('github.com\n'); 
         pag.hotkey('ctrl', 's'); time.sleep(1); pag.hotkey('alt', 'f4')
         # 刷新
         for _ in range(5):
