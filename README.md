@@ -67,7 +67,7 @@ git clone https://github.com/paradiseeee/heaven
     - 使用： `python -m Heaven.util.pdf_processor`
 
 - <strong><i>get_dns.py</i></strong>
-    - 功能：自动获取域名的 DNS
+    - 功能：自动获取域名的 DNS，并更新 DNS 缓存
     - 状态：完成
     - 使用： `python -m Heaven.util.get_dns`
 

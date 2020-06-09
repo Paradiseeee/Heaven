@@ -1,4 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
+import os
+import time
+import pyautogui as pag
 from pandas import read_html
 
 
@@ -23,14 +26,28 @@ class DNSParser():
         df = self.parse_result()
         print(df.to_markdown())
 
-    def write_host(self, filepath=''):
-        pass
+        return df
+
+    def write_host(self, domain):
+        '''不可移植使用'''
+        # 打开 geany
+        pag.press('win'); pag.write('geany'); time.sleep(1); pag.press('enter')
+        # 定位、修改、保存
+        pag.moveTo(968,90); pag.moveTo(1300, 900); pag.click(); 
+        pag.hotkey('shift', 'up'); pag.press('backspace'); pag.hotkey('ctrl', 'shift'); 
+        pag.hotkey('ctrl', 'shift'); pag.write(domain+' '); pag.write('github.com\n'); 
+        pag.hotkey('ctrl', 's'); pag.hotkey('alt', 'f4')
+        # 刷新
+        for _ in range(5):
+            os.system('ipconfig /flushdns')
 
 
 if __name__ == '__main__':
 
     parser = DNSParser('github.com')
-    parser.print_result()    
-
+    df = parser.print_result()
+    ipv4 = dict(zip(df[0], df[1]))['IP Address']
+    
     url = 'https://fastly.net.ipaddress.com/github.global.ssl.fastly.net'
     parser.print_result(url)
+    parser.write_host(ipv4)
