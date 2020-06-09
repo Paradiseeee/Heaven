@@ -36,7 +36,7 @@ class DNSParser():
         pag.moveTo(968,90); pag.moveTo(1300, 900); pag.click(); 
         pag.hotkey('shift', 'up'); pag.press('backspace'); pag.hotkey('ctrl', 'shift'); 
         pag.hotkey('ctrl', 'shift'); pag.write(domain+' '); pag.write('github.com\n'); 
-        pag.hotkey('ctrl', 's'); pag.hotkey('alt', 'f4')
+        pag.hotkey('ctrl', 's'); time.sleep(1); pag.hotkey('alt', 'f4')
         # 刷新
         for _ in range(5):
             os.system('ipconfig /flushdns')
