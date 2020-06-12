@@ -34,7 +34,7 @@ class DNSParser():
         pag.press('win'); pag.write('geany'); time.sleep(1); pag.press('enter')
         pag.hotkey('ctrl', 'shift'); pag.hotkey('ctrl', 'shift')
         # 定位、修改、保存
-        pag.moveTo(968,90, 1); pag.moveTo(1300, 900, 1); pag.click(); 
+        pag.moveTo(968,90, 1); pag.moveTo(1300, 900, 0.2); pag.click(); 
         pag.hotkey('shift', 'up'); pag.press('backspace'); 
         pag.write(domain+' '); pag.write('github.com\n'); 
         pag.hotkey('ctrl', 's'); time.sleep(1); pag.hotkey('alt', 'f4')
