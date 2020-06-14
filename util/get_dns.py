@@ -33,11 +33,15 @@ class DNSParser():
         # 打开 geany
         pag.press('win'); pag.write('geany'); time.sleep(1); pag.press('enter')
         pag.hotkey('ctrl', 'shift'); pag.hotkey('ctrl', 'shift')
+        # 打开notepad
+        pag.hotkey('win', 'r');time.sleep(0.2)
+        pag.write('notepad C:\Windows\System32\drivers\etc\hosts');pag.press('enter')
+        pag.hotkey('ctrl', 'shift');pag.hotkey('ctrl', 'shift')
         # 定位、修改、保存
-        pag.moveTo(968,90, 1); pag.moveTo(1300, 900, 0.2); pag.click(); 
+        pag.moveTo(1500, 1000, 0.2); pag.click(); 
         pag.hotkey('shift', 'up'); pag.press('backspace'); 
         pag.write(domain+' '); pag.write('github.com\n'); 
-        pag.hotkey('ctrl', 's'); time.sleep(1); pag.hotkey('alt', 'f4')
+        pag.hotkey('ctrl', 's'); time.sleep(0.5); pag.hotkey('alt', 'f4')
         # 刷新
         for _ in range(5):
             os.system('ipconfig /flushdns')
