@@ -29,10 +29,7 @@ class DNSParser():
         return df
 
     def write_host(self, domain):
-        '''不可移植使用'''
-        # 打开 geany
-        pag.press('win'); pag.write('geany'); time.sleep(1); pag.press('enter')
-        pag.hotkey('ctrl', 'shift'); pag.hotkey('ctrl', 'shift')
+        '''自动修改 hosts 文件'''
         # 打开notepad
         pag.hotkey('win', 'r');time.sleep(0.2)
         pag.write('notepad C:\Windows\System32\drivers\etc\hosts');pag.press('enter')
