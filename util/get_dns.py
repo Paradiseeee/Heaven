@@ -49,7 +49,6 @@ if __name__ == '__main__':
     parser = DNSParser('github.com')
     df = parser.print_result()
     ipv4 = dict(zip(df[0], df[1]))['IP Address']
-    
-    url = 'https://fastly.net.ipaddress.com/github.global.ssl.fastly.net'
-    parser.print_result(url)
     parser.write_host(ipv4)
+    # url = 'https://fastly.net.ipaddress.com/github.global.ssl.fastly.net'
+    # parser.print_result(url)
