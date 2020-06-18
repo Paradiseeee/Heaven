@@ -47,3 +47,4 @@ if __name__ == "__main__":
         print('\r %s' % text, end='》')
         time.sleep(0.01)
     print(f'\n\nImage saved to {file}\n')
+    time.sleep(1)
