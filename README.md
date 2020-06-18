@@ -66,6 +66,11 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `python -m Heaven.util.pdf_processor`
 
+- <strong><i>img_down.py</i></strong>
+    - 功能：自动解析地址下载 Bing 首页背景图高清大图
+    - 状态：完成
+    - 使用： `python -m Heaven.util.img_down`
+
 - <strong><i>get_dns.py</i></strong>
     - 功能：自动获取域名的 DNS，并更新 DNS 缓存
     - 状态：完成
