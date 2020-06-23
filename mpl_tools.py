@@ -15,15 +15,29 @@ import imageio
 import numpy as np
 
 # Font
-def set_font_family(font='Microsoft YaHei'):
-    plt.rcParams['font.family'] = [font]
+class Font:
+    '''Setting font & axes'''
 
-def get_font_family():
-    font_list = [f.name for f in mpl.font_manager.fontManager.ttflist]
-    return sorted(font_list)
+    def __init__(self):
+        self.attrs = None
+        print('\nCall self.setting() for quick setting-up\n')
 
-def set_axis_unicode():
-    plt.rcParams['axes.unicode_minus'] = False
+    def set_font_family(self, font='Microsoft YaHei'):
+        plt.rcParams['font.family'] = [font]
+
+    def get_font_family(self):
+        font_list = [f.name for f in mpl.font_manager.fontManager.ttflist]
+        return sorted(font_list)
+
+    def set_axis_unicode(self):
+        plt.rcParams['axes.unicode_minus'] = False
+
+    def setting(self, i=193):
+        if i:
+            self.set_font_family(self.get_font_family()[i])
+        else:
+            self.set_font_family()
+        self.set_axis_unicode()
 
 
 # Animation
@@ -61,10 +75,3 @@ class MyFuncAnimation(FuncAnimation):
         time.sleep(1)   # 等一会儿再删，不然会出现奇妙的现象
         os.system('rd/s/q __TEMP__')
         print('> Saved output.gif')
-
-
-if __name__ == "__main__":
-    
-    set_font_family(get_font_family()[193])
-    set_axis_unicode()
-    print('hahaha')
