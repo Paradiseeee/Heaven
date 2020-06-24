@@ -31,7 +31,7 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `help(MysqlHelper)`
 
-- <strong><i>mpl_tools</i></strong>
+- <strong><i>mpl_tools.py</i></strong>
     - 功能：matplotlib 的补充功能
     - 状态：[进行中...]()
     - 使用： `from Heaven import MyFuncAnimation, Font`
