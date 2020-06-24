@@ -6,7 +6,9 @@ DataScience Toolkits
 import os
 import sys
 
+# Redirect Class from Modules
 from .mysql_helper import MysqlHelper
+from .mpl_tools import MyFuncAnimation
 
 # Module Attributes --------------------------------------------------
 __doc__ = '''
