@@ -8,7 +8,7 @@ import sys
 
 # Redirect Class from Modules
 from .mysql_helper import MysqlHelper
-from .mpl_tools import MyFuncAnimation
+from .mpl_tools import MyFuncAnimation, Font
 
 # Module Attributes --------------------------------------------------
 __doc__ = '''

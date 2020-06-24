@@ -31,10 +31,10 @@ git clone https://github.com/paradiseeee/heaven
     - 状态：完成
     - 使用： `from Heaven import MysqlHelper` ； `help(MysqlHelper)`
 
-- <strong><i>chinese_encoding.py</i></strong>
-    - 功能：快速设置 matplotlib 绘图中文字体，以免每次都要设置 rcParams
-    - 状态：完成
-    - 使用： `from Heaven.chinese_encoding import *` 
+- <strong><i>mpl_tools</i></strong>
+    - 功能：matplotlib 的补充功能
+    - 状态：[进行中...]()
+    - 使用： `from Heaven import MyFuncAnimation, Font`
 
 - <strong><i>其他文件</i></strong>
     - `.gitignore`
