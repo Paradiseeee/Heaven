@@ -35,7 +35,7 @@ class DNSParser():
         pag.write('notepad C:\Windows\System32\drivers\etc\hosts');pag.press('enter')
         pag.hotkey('ctrl', 'shift');pag.hotkey('ctrl', 'shift')
         # 定位、修改、保存
-        pag.moveTo(1500, 1000, 0.2); pag.click(); 
+        pag.moveTo(1500, 900, 0.2); pag.click(); 
         pag.hotkey('shift', 'up'); pag.press('backspace'); 
         pag.write(domain+' '); pag.write('github.com\n'); 
         pag.hotkey('ctrl', 's'); time.sleep(0.5); pag.hotkey('alt', 'f4')
