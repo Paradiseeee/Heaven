@@ -36,7 +36,7 @@ class Translater():
 
         url = 'http://api.fanyi.baidu.com/api/trans/vip/translate?'
         url += f'q={query}&from={lang[0]}&to={lang[1]}'
-        url += f'&appid={self.API['API_ID']}&salt={salt}&sign={sign}'
+        url += f"&appid={self.API['API_ID']}&salt={salt}&sign={sign}"
 
         return url
 
