@@ -5,6 +5,7 @@ REFER | <http://api.fanyi.baidu.com/doc>
 import re
 import json
 import random
+import urllib
 import hashlib
 import http.client
 import win32clipboard
@@ -52,7 +53,7 @@ class Translater():
         '''生成请求链接'''
 
         # 全为英文时使用英译中，否则中译英
-        query = self.getclipboard()
+        query = urllib.parse.quote(self.getclipboard())
         bool_map = map(lambda s: '\u4e00'<=s<='\u9fa5', query)
         lang = ('en', 'zh') if sum(bool_map) == 0 else ('zh', 'en')
         salt = str(random.randint(32768, 65536))
