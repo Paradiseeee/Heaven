@@ -6,8 +6,8 @@ import re
 import json
 import random
 import hashlib
-import requests as rq
-import win32clipboard as wc
+import http.client
+import win32clipboard
 from win32con import CF_TEXT
 from Heaven import __ROOT__
 
@@ -22,6 +22,31 @@ class Translater():
         with open(__ROOT__+'/_UserKeys/baidu-trans-key.json', 'r') as f:
             self.API = json.loads(f.read())
         self.URL = self.generate_url()
+    
+    def translate(self):
+        '''请求翻译结果'''
+
+        try:
+            myurl = self.generate_url()
+        except Exception as e:
+            return e
+
+        try:
+            httpClient = http.client.HTTPConnection('api.fanyi.baidu.com')
+            httpClient.request('GET', myurl)
+
+            # response是HTTPResponse对象
+            response = httpClient.getresponse()
+            result_all = response.read().decode("utf-8")
+            result = json.loads(result_all)
+
+            return result
+
+        except Exception as e:
+            print (e)
+        finally:
+            if httpClient:
+                httpClient.close()
 
     def generate_url(self):
         '''生成请求链接'''
@@ -42,9 +67,9 @@ class Translater():
 
     def getclipboard(self):
 
-        wc.OpenClipboard()
-        text = wc.GetClipboardData(CF_TEXT)
-        wc.CloseClipboard()
+        win32clipboard.OpenClipboard()
+        text = win32clipboard.GetClipboardData(CF_TEXT)
+        win32clipboard.CloseClipboard()
         try:
             text = text.decode()
         except:
