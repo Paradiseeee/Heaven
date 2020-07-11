@@ -53,7 +53,7 @@ class Translater():
         '''生成请求链接'''
 
         # 全为英文时使用英译中，否则中译英
-        query = urllib.parse.quote(self.getclipboard())
+        query = self.getclipboard()
         bool_map = map(lambda s: '\u4e00'<=s<='\u9fa5', query)
         lang = ('en', 'zh') if sum(bool_map) == 0 else ('zh', 'en')
         salt = str(random.randint(32768, 65536))
@@ -61,7 +61,7 @@ class Translater():
         sign = hashlib.md5(sign.encode()).hexdigest()
 
         url = 'http://api.fanyi.baidu.com/api/trans/vip/translate?'
-        url += f'q={query}&from={lang[0]}&to={lang[1]}'
+        url += f'q={urllib.parse.quote(query)}&from={lang[0]}&to={lang[1]}'
         url += f"&appid={self.API['API_ID']}&salt={salt}&sign={sign}"
 
         return url
