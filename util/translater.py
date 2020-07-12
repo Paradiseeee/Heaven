@@ -9,6 +9,7 @@ import urllib
 import hashlib
 import http.client
 import win32clipboard
+import tkinter as tk
 from win32con import CF_TEXT
 from Heaven import __ROOT__
 
@@ -23,6 +24,7 @@ class Translater():
         with open(__ROOT__+'/_UserKeys/baidu-trans-key.json', 'r') as f:
             self.API = json.loads(f.read())
         self.URL = self.generate_url()
+        self.PrevCopyed = None
     
     def translate(self):
         '''请求翻译结果'''
@@ -79,8 +81,41 @@ class Translater():
             text = text.replace(t, ' ')
         
         return text
+    
+    def window(self):
+
+        root = tk.Tk()
+        root.geometry("+0+0")
+        root.configure(bg='#000000')
+        root.overrideredirect(True)
+        root.wm_attributes('-alpha', 0.6)
+        root.wm_attributes('-topmost', True)
+
+        var = tk.StringVar()
+        label = tk.Label(root, textvariable=var, fg='#ffffff', bg='#000000')
+
+        def get_result():
+
+            if not self.PrevCopyed:
+                var.set(' Welcome to the Most Wonderful Translater in the Whole Fucking World ! ')
+                label.pack()
+                self.PrevCopyed = self.getclipboard()
+
+            if self.getclipboard() != self.PrevCopyed:
+                try:
+                    text = '\u27A4   ' + self.translate()[1]
+                except Exception as e:
+                    text = f'ERROR: {str(e)}'
+                var.set(text)
+                label.pack()
+                self.PrevCopyed = self.getclipboard()
+
+            root.after(1000, get_result)
+
+        root.after(0, get_result)
+        root.mainloop()
 
 
 if __name__ == "__main__":
 
-    print(Translater().getclipboard())
+    Translater().window()
