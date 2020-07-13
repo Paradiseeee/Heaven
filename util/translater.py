@@ -70,9 +70,12 @@ class Translater():
 
     def getclipboard(self):
 
-        win32clipboard.OpenClipboard()
-        text = win32clipboard.GetClipboardData(CF_TEXT)
-        win32clipboard.CloseClipboard()
+        try:
+            win32clipboard.OpenClipboard()
+            text = win32clipboard.GetClipboardData(CF_TEXT)
+            win32clipboard.CloseClipboard()
+        except:
+            return 'Invalid Clipboard format'
         try:
             text = text.decode()
         except:
