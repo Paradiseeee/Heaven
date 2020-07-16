@@ -1,6 +1,11 @@
 ﻿# -*- coding: utf-8 -*-
 """
 REFER | <http://api.fanyi.baidu.com/doc>
+平时经常阅读英文文档，浏览器有翻译插件，但是其他软件中翻译就比较麻烦；
+使用第三方的辞典软件翻译结果不理想，并且平时一般只需要翻译某一个单词或者长难句；
+而第三方软件的划词和取词功能也不符合阅读习惯，用户体验极差；
+因此 DIY 一个符合自己需求的便捷的全局翻译“插件”。
+只需要复制需要翻译的文本，自动中英互译。如果需要翻译特定内容，只需在任意位置输入然后复制。
 """
 import re
 import json
@@ -95,11 +100,12 @@ class Translater():
         root.geometry("+0+0")
         root.configure(bg='#000000')
         root.overrideredirect(True)
-        root.wm_attributes('-alpha', 0.7)
+        root.wm_attributes('-alpha', 0.8)
         root.wm_attributes('-topmost', True)
 
         var = tk.StringVar()
-        label = tk.Label(root, textvariable=var, fg='#ffffff', bg='#000000')
+        label = tk.Label(root, textvariable=var, 
+                        fg='#ffffff', bg='#000000', relief='sunken')
 
         def get_result():
 
