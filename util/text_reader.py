@@ -1,6 +1,9 @@
 ﻿# -*- coding: utf-8 -*-
-from os import system
+import os
+import time
 from gtts import gTTS
+from playsound import playsound
+
 
 class Reader():
     '''reading input text in different language'''
@@ -27,7 +30,7 @@ class Reader():
                     text.append(t)
         elif self.MODE == 'file':
             path = input('\n>>> 请输入文件路径：\n')
-            with open(path, 'r') as f:
+            with open(path, 'r', encoding='utf-8') as f:
                 text = f.read()
             text = text.split('\n')
         
@@ -39,8 +42,8 @@ class Reader():
         print('\n>>> 正在处理，请稍等...\n')
         speech = gTTS(text=' '.join(text), lang=self.LANG, slow=False)
         speech.save('output.mp3')
-        print('\n>>> 正在打开音频文件...')
-        system('start output.mp3')
+        print('\n>>> 正在打开音频文件...\n')
+        playsound('output.mp3')
 
 
     def run(self):
@@ -50,11 +53,13 @@ class Reader():
         print('-'*72 + '\n')
 
         mode = input('\n>>> 请选择文本来源：输入(1) | 文件(2)\n')
-        lang = input('\n>>> 请选择语言：中文(1) | 英文(2)\n')
+        lang = input('\n>>> 请选择文本语言：中文(1) | 英文(2)\n')
         self.LANG = 'zh-CN' if lang == '1' else 'en'
         self.MODE = 'input' if mode == '1' else 'file'
         text = self.get_text()
         self.generate_voice(text)
+        time.sleep(1)
+        os.remove('output.mp3')
 
 
 if __name__ == "__main__":
