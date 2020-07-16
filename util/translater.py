@@ -17,42 +17,42 @@ from Heaven import __ROOT__
 class Translater():
     '''调用百度API英汉互译'''
 
-    def __init__(self, mode='cmd'):
+    def __init__(self):
         '''initialization'''
 
-        self.MODE = mode
         with open(__ROOT__+'/_UserKeys/baidu-trans-key.json', 'r') as f:
             self.API = json.loads(f.read())
-        self.URL = self.generate_url()
         self.PrevCopyed = None
-    
+
+
     def translate(self):
-        '''请求翻译结果'''
 
         try:
             myurl = self.generate_url()
         except Exception as e:
-            return e
+            # return
+            return 'Something wrong during generating URL: ' + str(e)
 
         try:
             httpClient = http.client.HTTPConnection('api.fanyi.baidu.com')
             httpClient.request('GET', myurl)
 
-            # response是HTTPResponse对象
             response = httpClient.getresponse()
             result_all = response.read().decode("utf-8")
             result = json.loads(result_all)['trans_result'][0]
-
+            # return
             return (result['src'], result['dst'])
 
         except Exception as e:
-            print (e)
+            # return
+            return 'Something wring during translating: ' + str(e)
+        
         finally:
             if httpClient:
                 httpClient.close()
 
+
     def generate_url(self):
-        '''生成请求链接'''
 
         # 全为英文时使用英译中，否则中译英
         query = self.getclipboard()
@@ -68,30 +68,34 @@ class Translater():
 
         return url
 
+
     def getclipboard(self):
 
+        win32clipboard.OpenClipboard()
         try:
-            win32clipboard.OpenClipboard()
             text = win32clipboard.GetClipboardData(CF_TEXT)
-            win32clipboard.CloseClipboard()
         except:
-            return 'Invalid Clipboard format'
+            text = 'Invalid Clipboard Format'.encode()
+        win32clipboard.CloseClipboard()     # 打开后必须手动关闭
+
         try:
             text = text.decode()
         except:
             text = text.decode('gbk')
+        
         for t in ['\r', '\n', '\t']:
             text = text.replace(t, ' ')
         
         return text
-    
+
+
     def window(self):
 
         root = tk.Tk()
         root.geometry("+0+0")
         root.configure(bg='#000000')
         root.overrideredirect(True)
-        root.wm_attributes('-alpha', 0.6)
+        root.wm_attributes('-alpha', 0.7)
         root.wm_attributes('-topmost', True)
 
         var = tk.StringVar()
@@ -100,7 +104,7 @@ class Translater():
         def get_result():
 
             if not self.PrevCopyed:
-                var.set(' Welcome to the Most Wonderful Translater in the Whole Fucking World ! ')
+                var.set(' Welcome to the Most Wonderful Translater in the Whole F**king World ! ')
                 label.pack()
                 self.PrevCopyed = self.getclipboard()
 
@@ -113,7 +117,7 @@ class Translater():
                 label.pack()
                 self.PrevCopyed = self.getclipboard()
 
-            root.after(1000, get_result)
+            root.after(200, get_result)
 
         root.after(0, get_result)
         root.mainloop()
