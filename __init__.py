@@ -6,10 +6,6 @@ DataScience Toolkits
 import os
 import sys
 
-# Redirect Class from Modules
-from .mysql_helper import MysqlHelper
-from .mpl_tools import MyFuncAnimation, Font
-
 # Module Attributes --------------------------------------------------
 __doc__ = '''
 I am trying to build a module for specific field of data science, and
