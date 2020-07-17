@@ -48,3 +48,14 @@ def get_response(url, user_agent=WINDOWS_UA, show=False, save=False, **headers):
     else:
         print(res.status_code)
         return res
+
+
+if __name__ == "__main__":
+
+    examples = '''
+    url = 'https://www.baidu.com'
+    cookies = get_cookies(url)
+    res1 = get_response(url, show=True, Cookie=cookies['Cookie'])
+    res2 = get_response(url, save=True, **cookies)
+    '''
+    print(examples)
