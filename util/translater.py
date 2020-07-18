@@ -36,7 +36,7 @@ class Translater():
             myurl = self.generate_url()
         except Exception as e:
             # return
-            return 'Something wrong during generating URL: ' + str(e)
+            ret = ('', 'Something wrong during generating URL: ' + str(e))
 
         try:
             httpClient = http.client.HTTPConnection('api.fanyi.baidu.com')
@@ -46,15 +46,18 @@ class Translater():
             result_all = response.read().decode("utf-8")
             result = json.loads(result_all)['trans_result'][0]
             # return
-            return (result['src'], result['dst'])
+            ret = (result['src'], result['dst'])
 
         except Exception as e:
             # return
-            return 'Something wring during translating: ' + str(e)
+            ret = ('', 'Something wring during translating: ' + str(e))
         
         finally:
+            # 需要关闭连接，不能在上面直接返回值
             if httpClient:
                 httpClient.close()
+
+        return ret
 
 
     def generate_url(self):
