@@ -36,7 +36,7 @@ class Translater():
             myurl = self.generate_url()
         except Exception as e:
             # return
-            ret = ('', 'Something wrong during generating URL: ' + str(e))
+            ret = 'Something wrong during generating URL: ' + str(e)
 
         try:
             httpClient = http.client.HTTPConnection('api.fanyi.baidu.com')
@@ -44,13 +44,13 @@ class Translater():
 
             response = httpClient.getresponse()
             result_all = response.read().decode("utf-8")
-            result = json.loads(result_all)['trans_result'][0]
+            results = json.loads(result_all)['trans_result']
             # return
-            ret = (result['src'], result['dst'])
+            ret = '\n'.join([r['dst'] for r in results])
 
         except Exception as e:
             # return
-            ret = ('', 'Something wring during translating: ' + str(e))
+            ret = 'Something wring during translating: ' + str(e)
         
         finally:
             # 需要关闭连接，不能在上面直接返回值
@@ -91,9 +91,6 @@ class Translater():
         except:
             text = text.decode('gbk')
         
-        for t in ['\r', '\n', '\t']:
-            text = text.replace(t, ' ')
-        
         return text
 
 
@@ -107,8 +104,7 @@ class Translater():
         root.wm_attributes('-topmost', True)
 
         var = tk.StringVar()
-        label = tk.Label(root, textvariable=var, 
-                        fg='#ffffff', bg='#000000', relief='sunken')
+        label = tk.Label(root, textvariable=var, fg='#ffffff', bg='#000000', relief='sunken')
 
         def get_result():
 
@@ -119,14 +115,14 @@ class Translater():
 
             if self.getclipboard() != self.PrevCopyed:
                 try:
-                    text = '\u27A4   ' + self.translate()[1]
+                    text = '\u27A4   ' + self.translate()
                 except Exception as e:
                     text = f'ERROR: {str(e)}'
                 var.set(text)
                 label.pack()
                 self.PrevCopyed = self.getclipboard()
 
-            root.after(200, get_result)
+            root.after(100, get_result)
 
         root.after(0, get_result)
         root.mainloop()
