@@ -1,8 +1,7 @@
-
+/_backup
 desktop.ini
 *.pyc
-/__pycache__
-/DOCUMENTS
 output.*
-/_UserKeys/*.json
+/__pycache__
 /util/__pycache__
+/_UserKeys/*.json
