@@ -1,69 +1,21 @@
 # -*- coding: utf-8 -*-
+#-----------------------------------------------------------------------------
+# Copyright (c) 2019 - 2020, Paradise (github.com/paradiseeee). 
+# All rights reserved.
+#-----------------------------------------------------------------------------
+
 """
 DataScience Toolkits
+PlatformInfo: Python-3.7.3 on Windows X64
+Author: <https://github.com/paradiseeee>
+Documents: <https://paradiseeee.github.io/Heaven>
+Contacts: <paradise_yang@outlook.com>; <paradise26472@qq.com>
 """
 
-import os
 import sys
 
-# Module Attributes --------------------------------------------------
-__doc__ = '''
-I am trying to build a module for specific field of data science, and
-at the same time learn to manage a public project.
-
-It just started, and I will put anything I like in here, which doesn't 
-have to be related with data science, just to enhance my workflow.
-
-If everything goes well, I will make it more specific and usefull in 
-the next version. I am new to this whole thing and I look forward some 
-usefull advices.
-
-If anyone is interested in this, please let me know:
- <paradise26472@qq.com;>
- <paradise-yang@outlook.com;>
-
-More Information About This Module:
- <https://github.com/paradiseeee/Heaven>
-
-My GitHub Page:
- <https://paradiseeee.github.io>'''
-__author__ = "Paradise (github.com/paradiseeee)"
+__author__ = ""
 __version__ = "1.0"
 __copyright__ = "Copyright (c) 2019-2020 Paradise"
 __license__ = "MIT"
-
-# User Attributes -----------------------------------------------
 __ROOT__ = sys.executable.replace('python.exe', 'lib\\Heaven')
-
-
-# Information Functions ------------------------------------------
-def get_modules(path=__ROOT__, suffix='py', *exclude):
-    os.chdir(path)
-    files = [i.split('.') for i in sorted(os.listdir())]
-    max_length = max([len(f) for f in os.listdir()])
-    for f in files:
-        if len(f) == 1 and f[0] not in exclude and f[0][0] != '_':
-            text = f[0].rjust(max_length-1) + '/' + ' | [P]Path'
-            print(text.center(80-max_length, ' '))
-    for f in files:
-        if suffix in f:
-            text = '.'.join(f).rjust(max_length) + ' | [F]File'
-            print(text.center(80-max_length, ' '))
-
-
-if __name__ == "__main__":
-
-    print('\n' + ' Welcome to Heaven! '.center(72, '_'))
-    print(__doc__)
-
-    print('\n' + ' Module List '.center(72, '_') + '\n')
-    get_modules(__ROOT__, 'py', 
-        '__pycache__', 
-        '_DOCS', 
-        '_UserKeys',
-        '_UserKeys_PublicFormat',
-        'LICENSE')
-
-    print('\n' + ' LISENCE '.center(72, '_') + '\n')
-    with open('LICENSE', 'r') as f:
-        print(f.read())
