@@ -5,3 +5,4 @@ output.*
 /__pycache__
 /util/__pycache__
 /_UserKeys/*.json
+python_lib_Heaven.lnk
