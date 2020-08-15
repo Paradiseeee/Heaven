@@ -10,29 +10,35 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-class Font:
-    '''Setting font & axes'''
+class Begin:
+    '''Setting font, style & axes'''
 
     def __init__(self):
         self.attrs = None
-        print('\nCall self.setting() for quick set-up\n')
-
-    def set_font_family(self, font='Microsoft YaHei'):
-        plt.rcParams['font.family'] = [font]
+        print('\nCall self.get_font_family to get available fonts')
+        print('\nCall self.get_style to get available styles')
 
     def get_font_family(self):
         font_list = [f.name for f in mpl.font_manager.fontManager.ttflist]
         return sorted(font_list)
 
+    def set_font_family(self, font='Microsoft YaHei'):
+        plt.rcParams['font.family'] = [font]
+
+    def get_style(self):
+        return plt.style.available
+
+    def set_style(self, style='dark_background'):
+        plt.style.use(style)
+
     def set_axis_unicode(self):
         plt.rcParams['axes.unicode_minus'] = False
 
-    def setting(self, i=193):
-        if i:
-            self.set_font_family(self.get_font_family()[i])
-        else:
-            self.set_font_family()
+    def setting(self, **kwargs):
+        '''This is for quickly setup'''
         self.set_axis_unicode()
+        self.set_font_family()
+        self.set_style()
 
 
 class MyFuncAnimation(FuncAnimation):
