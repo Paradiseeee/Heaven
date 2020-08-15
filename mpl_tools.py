@@ -27,7 +27,7 @@ class Font:
     def set_axis_unicode(self):
         plt.rcParams['axes.unicode_minus'] = False
 
-    def setting(self, i=193):
+    def setting(i=193):
         if i:
             self.set_font_family(self.get_font_family()[i])
         else:
