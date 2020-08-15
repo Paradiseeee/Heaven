@@ -75,7 +75,7 @@ class MyFuncAnimation(FuncAnimation):
 if __name__ == "__main__":
 
     examples = '''
-    Font().setting()
+    Begin().setting()
     ani = MyFuncAnimation(fig, func, interval=100)
     ani.save()
     '''
