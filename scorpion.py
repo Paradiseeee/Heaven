@@ -3,6 +3,7 @@
 """
 import re
 import http
+import wget
 import urllib
 import requests as rq
 from bs4 import BeautifulSoup
@@ -48,6 +49,25 @@ def get_response(url, user_agent=WINDOWS_UA, show=False, save=False, **headers):
     else:
         print(res.status_code)
         return res
+
+
+def batchdown(url, tag='img', attr='src', suffix='png'):
+    '''
+    Download all attr-link in specific tag, and save with suffix;
+    Default download img and save as png.
+    '''
+    res = get_response(url)
+    soup = BeautifulSoup(res.text, features='lxml')
+    links = soup.find_all(tag)
+    i = 0
+    print('\nStart Downloading ...')
+    for link in links:
+        try:
+            wget.download(link.attrs[attr], out=f'{i}.{suffix}')
+            i += 1
+        except:
+            continue
+    print('\nFinish Downloading !')
 
 
 if __name__ == "__main__":
