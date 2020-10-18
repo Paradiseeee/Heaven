@@ -51,7 +51,7 @@ def get_response(url, user_agent=WINDOWS_UA, show=False, save=False, **headers):
         return res
 
 
-def batchdown(url, tag='img', attr='src', suffix='png'):
+def batchdown(url, tag='img', attr='data-src', suffix='png'):
     '''
     Download all attr-link in specific tag, and save with suffix;
     Default download img and save as png.
@@ -79,3 +79,4 @@ if __name__ == "__main__":
     res2 = get_response(url, save=True, **cookies)
     '''
     print(examples)
+
