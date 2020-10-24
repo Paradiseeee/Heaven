@@ -2,7 +2,7 @@
 
 > 下阶段任务：按照 Python 第三方库规范完善 STRUCTURE
 
-## 一、简介
+## 一、简介（Introduction）
 
 本仓库集成了一些数据科学常用功能，包括数据分析过程、日常工作效率提升，以及一些有趣的工具。目前正在持续更新，如果效果良好将在以后继续完善，打造一个专用的工具箱。
 
@@ -16,7 +16,7 @@ git clone https://github.com/paradiseeee/heaven
 *PS：本人小白，路过的朋友欢迎交流指教*
 
 
-## 二、详情
+## 二、详情（Details）
 
 ### [***Heaven***](./) -- 根目录，数据分析工具
 
@@ -62,3 +62,15 @@ Name|Description|Status
 <strong><i>make_ico.py</i></strong>|图片转换为图标文件|完成|
 
 <!-- </details> -->
+
+
+## 三、待更新（New ideas）
+
+- scorpion
+    - 增加正文提取函数，从以下文件中提取正文内容（去除格式，代码，超文本）：
+        - markdown
+        - ipynb
+        - html
+        - 其他文本文件
+    - 提取得到的内容传入 translate 接口进行翻译（英译中）
+    - 结果替换原文中的英文内容，并生成副本
