@@ -66,7 +66,7 @@ Name|Description|Status
 
 ## 三、待更新（New ideas）
 
-- scorpion
+- util.translater
     - 增加正文提取函数，从以下文件中提取正文内容（去除格式，代码，超文本）：
         - markdown
         - ipynb

@@ -21,18 +21,24 @@ from Heaven import __ROOT__
 class Translater():
     '''调用百度API英汉互译'''
 
-    def __init__(self):
+    def __init__(self, fromClipboard='True'):
         '''initialization'''
 
+        self.PrevCopyed = None
+        self.fromClipboard = fromClipboard
         with open(__ROOT__+'/_UserKeys/baidu-trans-key.json', 'r') as f:
             self.API = json.loads(f.read())
-        self.PrevCopyed = None
 
 
-    def translate(self):
+    def translate(self, text='if fromClipboard=True, ignore this text'):
+        '''main function'''
 
         try:
-            myurl = self.generate_url()
+            if self.fromClipboard:
+                query = self.getclipboard()
+            else:
+                query = text
+            myurl = self.generate_url(query)
         except Exception as e:
             # return
             ret = 'Something wrong during generating URL: ' + str(e)
@@ -59,10 +65,10 @@ class Translater():
         return ret
 
 
-    def generate_url(self):
+    def generate_url(self, query):
+        '''generate API URL'''
 
         # 全为英文时使用英译中，否则中译英
-        query = self.getclipboard()
         bool_map = map(lambda s: '\u4e00'<=s<='\u9fa5', query)
         lang = ('en', 'zh') if sum(bool_map) == 0 else ('zh', 'en')
         salt = str(random.randint(32768, 65536))
@@ -77,6 +83,7 @@ class Translater():
 
 
     def getclipboard(self):
+        '''get text from clipboard; used when self.fromClipboard=True(default)'''
 
         win32clipboard.OpenClipboard()
         try:
@@ -94,6 +101,7 @@ class Translater():
 
 
     def window(self):
+        '''desktop window powered by tkinter'''
 
         root = tk.Tk()
         root.geometry("+0+0")
