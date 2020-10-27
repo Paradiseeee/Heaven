@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Spider Helper - Frequently Used Functions in Spider-Development
 """
+import os
 import re
 import http
 import wget
@@ -60,14 +61,16 @@ def batchdown(url, tag='img', attr='data-src', suffix='png'):
     soup = BeautifulSoup(res.text, features='lxml')
     links = soup.find_all(tag)
     i = 0
-    print('\nStart Downloading ...')
+    print('\nStart Downloading ...\n')
+    os.mkdir('batchdown-output')
+    os.chdir('batchdown-output')
     for link in links:
         try:
             wget.download(link.attrs[attr], out=f'{i}.{suffix}')
             i += 1
         except:
             continue
-    print('\nFinish Downloading !')
+    print('\n\nFinish Downloading !')
 
 
 if __name__ == "__main__":
