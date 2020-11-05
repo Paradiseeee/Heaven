@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Image DownLoader | Created to auto catch bing wallpaper"""
+import os
 import re
 import time
 import datetime
@@ -41,10 +42,11 @@ if __name__ == "__main__":
     date_str = str(datetime.date.today())
     file = f"C:/Users/Paradise/Pictures/BING/{date_str}.{url.split('.')[-1]}"
     DownLoader().get(url, file)
+    size = os.path.getsize(file)/1024/1024
     # useless sh*t
     for i in range(75):
         text = '=' * i
         print('\r %s' % text, end='》')
         time.sleep(0.01)
-    print(f'\n\nImage saved to {file}\n')
+    print(f'\n\nImage saved to {file} ({round(size, 2)} MB)\n')
     time.sleep(1)
