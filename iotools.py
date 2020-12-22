@@ -26,8 +26,4 @@ def iterfiles(root, depth, *suffix):
 
 if __name__ == "__main__":
 
-    root = 'C:/Users/Paradise/Pictures'
-    files = iterfiles(root, 7, 'jpg', 'png', 'JPG', 'PNG', 'jpeg')
-    for i in range(1,11):
-        chosen = int(np.random.randint(len(files)))
-        shutil.copy(files[chosen], root+f'/GlobalRandom/random{i}.jpg')
+    help(iterfiles)
