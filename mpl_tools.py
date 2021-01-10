@@ -16,7 +16,7 @@ class Begin:
     def __init__(self):
         self.attrs = None
         print('\nCall self.get_font_family to get available fonts')
-        print('\nCall self.get_style to get available styles')
+        print('\nCall self.get_style to get available styles\n')
 
     def get_font_family(self):
         font_list = [f.name for f in mpl.font_manager.fontManager.ttflist]
