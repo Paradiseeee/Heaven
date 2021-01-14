@@ -21,7 +21,7 @@ from Heaven import __ROOT__
 class Translater():
     '''调用百度API英汉互译'''
 
-    def __init__(self, fromClipboard='True'):
+    def __init__(self, fromClipboard=True):
         '''initialization'''
 
         self.PrevCopyed = None
