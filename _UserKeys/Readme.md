@@ -1,1 +1,1 @@
-# 按照 `_UserKeys_PublicFormat` 中的文件和格式在此文件中创建对应的用户配置文件。
+# 按照 `_UserKeysFormat` 中的文件和格式在此文件夹中创建对应的用户配置文件。
