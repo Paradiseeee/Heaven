@@ -70,6 +70,15 @@ def batchdown(url, tag='img', attr='data-src', suffix='png'):
             i += 1
         except:
             continue
+    if suffix == 'webp':
+        from PIL import Image
+        files = os.listdir()
+        for f in files:
+            img = Image.open(f)
+            img.load()
+            img.save(f.replace('.webp', '.jpg'))
+            os.remove(f)
+    os.chdir('../')
     print('\n\nFinish Downloading !')
 
 
