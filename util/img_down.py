@@ -31,7 +31,7 @@ def get_bing_bg():
     res = rq.get(host)
     url = re.compile('(th\?id=.*?\.jpg)').findall(res.text)[0].split('_')
     _ = url.pop()
-    url = '/' + '_'.join(url)
+    url = '/' + '_'.join(url) + '.jpg'
 
     return host + url
 
