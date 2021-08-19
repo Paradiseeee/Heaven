@@ -29,9 +29,9 @@ def get_bing_bg():
 
     host = 'https://cn.bing.com'
     res = rq.get(host)
-    soup = BeautifulSoup(res.text, features='lxml')
-    text = str(soup.find_all('div', {'id': 'bgDiv'})[0])
-    url = re.compile('src="(.*?)"', re.S).findall(text)[0].split('&')[0]
+    url = re.compile('(th\?id=.*?\.jpg)').findall(res.text)[0].split('_')
+    _ = url.pop()
+    url = '/' + '_'.join(url)
 
     return host + url
 
