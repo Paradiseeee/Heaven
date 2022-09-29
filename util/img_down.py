@@ -28,7 +28,8 @@ def get_bing_bg():
     '''get url of bing-home-page background'''
 
     host = 'https://cn.bing.com'
-    res = rq.get(host)
+    header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
+    res = rq.get(host, headers = header)
     url = re.compile('(th\?id=.*?\.jpg)').findall(res.text)[0].split('_')
     _ = url.pop()
     url = '/' + '_'.join(url) + '_UHD.jpg'
