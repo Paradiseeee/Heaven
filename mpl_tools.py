@@ -72,6 +72,28 @@ class MyFuncAnimation(FuncAnimation):
         print('> Saved output.gif')
 
 
+class Func:
+    '''functions'''
+
+    def __init__(self):
+        self.attrs = None
+    
+    def get_subplots(self, layout, *args):
+        '''
+        Get subplots by layout, example:
+        A\nB\nC for verticle
+        ABC for horizontal
+        '''
+        if args:
+            fig = plt.figure(figsize=args)
+        else:
+            fig = plt.figure()
+        ax_dict = fig.subplot_mosaic(layout)
+
+        return ax_dict
+
+
+
 if __name__ == "__main__":
 
     examples = '''
