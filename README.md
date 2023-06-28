@@ -48,7 +48,7 @@ git clone https://github.com/paradiseeee/heaven
     - `update_python_lib.bat`： 更新 %PYTHON_HOME%\LIB\Heaven 的批处理；
     - `_config.yml`：GitHub Page 主题
 
-### [***Heaven.util***](./util) -- 其他乱七八糟的工具
+### [***Heaven.util***](./util) -- 其他辅助工具
 
 <!-- <details>
     <summary>展开<strong><em>模块列表</em></strong></summary> -->
